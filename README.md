@@ -127,7 +127,7 @@ This enables **proportionate universalism**-targeting resources where they can a
 - Excess rate = (Observed mortality - 88.8)
 - Excess deaths = (Excess rate / 100,000) × Population size
 
-**Interpretation:** Estimated deaths that would be prevented if all areas achieved the mortality rate of least deprived populations—a measure of **health inequality burden**.
+**Interpretation:** Estimated deaths that would be prevented if all areas achieved the mortality rate of least deprived populations, a measure of **health inequality burden**.
 
 **Total excess deaths in sample: 239** *(rounded from 238.79)*
 
