@@ -77,6 +77,61 @@ Commissioning tool for intervention targeting
 
 ---
 
+## Methodology
+
+### Prevention Priority Score
+
+**Formula:** 
+`Prevention Priority Score = (Average CVD Mortality × Average Risk Index) / 100`
+
+**Rationale:** 
+This composite score identifies localities where:
+1. **Current burden is high** (elevated mortality) 
+2. **Modifiable risk is high** (elevated behavioural risk factors)
+
+Areas scoring highest have both:
+- Greatest need (mortality burden)
+- Greatest prevention potential (modifiable risk exposure)
+
+This enables **proportionate universalism**-targeting resources where they can achieve maximum population health impact.
+
+---
+
+### Excess Deaths Calculation
+
+**Baseline:** IMD Quintile 1 average mortality rate (88.8 per 100,000)
+
+**Method:** For each locality, calculated:
+- Excess rate = (Observed mortality - 88.8)
+- Excess deaths = (Excess rate / 100,000) × Population size
+
+**Interpretation:** Estimated deaths that would be prevented if all areas achieved the mortality rate of least deprived populations—a measure of **health inequality burden**.
+
+**Total excess deaths in sample: 239** *(rounded from 238.79)*
+
+---
+
+### Risk Index Calculation
+
+**Formula:**
+`Risk Index = Hypertension Prevalence (%) + Diabetes Prevalence (%) + Smoking Prevalence (%) + Obesity Prevalence (%)`
+
+**Rationale:**
+Composite score aggregating four major modifiable cardiovascular risk factors. Higher values indicate greater cumulative behavioural risk burden within a population.
+
+---
+
+### Relative Risk Calculation
+
+**Formula:**
+`Relative Risk = (Most deprived mortality rate) ÷ (Least deprived mortality rate)`
+
+**Result:** 1.75
+
+**Interpretation:** Most deprived populations experience 1.75 times the CVD mortality rate of least deprived populations (75% higher risk).
+
+---
+
 ## Public Health Application
 
 This analysis demonstrates practical population health intelligence capabilities:
