@@ -1,83 +1,156 @@
 # Cardiovascular Disease Risk & Deprivation Analysis
 ### Population Health Intelligence Dashboard
 
+## Quick Links
+
+**View Dashboard Screenshots(https://github.com/ttbangg/cvd-health-inequality-analysis-powerbi/blob/main/dashboard_overview.png.png)** | **Download Power BI File(https://github.com/ttbangg/cvd-health-inequality-analysis-powerbi/blob/main/cvd_dashboard.pbix.pbix)** | **View SQL Code(https://github.com/ttbangg/cvd-health-inequality-analysis-powerbi/blob/main/cvd_data_audit.sql.sql)**
+
+*Examining cardiovascular disease mortality patterns by deprivation to identify prevention intervention priorities*
+
+---
+
+## Project Overview
+
 This project analyses cardiovascular disease (CVD) mortality patterns across local populations, examining the relationship between behavioural risk factors, deprivation, and mortality outcomes.
 
 The analysis demonstrates how public health data can be used to identify inequality gaps and prioritise prevention interventions.
 
 ---
 
-## Tools Used
-- SQL (data audit and validation)
-- Microsoft Power BI (data modelling and dashboard development)
+## Key Findings
+
+- **Deprivation gradient confirmed:** CVD mortality increases steadily with deprivation, most deprived quintile experiences 75% higher mortality than least deprived
+
+- **Inequality gap quantified:** 66.8 deaths per 100,000 excess mortality in most vs least deprived populations
+
+- **Risk clustering:** Behavioural risk factors (smoking, obesity, hypertension) significantly elevated in deprived communities, reinforcing mortality disparities
+
+- **Geographic outlier:** Locality 71 flagged-extreme mortality (210 per 100k) despite moderate deprivation, driven by high smoking/diabetes prevalence
+
+- **Prevention priorities identified:** Top 10 localities ranked by Prevention Priority Score combining mortality burden and modifiable risk exposure
+
+- **Estimated preventable deaths:** 239 excess deaths if all areas achieved least deprived mortality rates
 
 ---
 
-## Dataset Structure
+## Technical Approach
 
-Columns used in the analysis:
+**Tools:**
 
-- Locality_Name
-- IMD_Quintile
-- Population_Size
-- Hypertension_Prevalence (%)
-- Diabetes_Prevalence (%)
-- Smoking_Prevalence (%)
-- Obesity_Prevalence (%)
-- CVD_Mortality_Rate (per 100,000)
+- SQL (SQLite) - Data audit, validation, quality checks
+- Microsoft Power BI - Data modeling, DAX measures, dashboard development
 
----
+**Methods:**
+- Risk stratification analysis
+- Deprivation gradient assessment
+- Composite risk scoring
+- Prevention priority ranking
+- Inequality gap calculation
 
-## Key Analytical Questions
-
-1. Does cardiovascular mortality increase with deprivation?
-2. How strongly are behavioural risk factors associated with mortality?
-3. What is the inequality gap between most and least deprived populations?
-4. Which areas should be prioritised for prevention interventions?
+**Data Quality:**
+- Missing data: 4 values per variable (5%) handled via median imputation
+- Outliers: Locality 71 retained with clinical flagging
+- IMD coding verified (reverse of England standard)
 
 ---
 
-## Data Cleaning
+## Dashboard Components
 
-During data preparation, four missing values were identified in behavioural risk variables (Smoking, Diabetes, Obesity and Hypertension).
+### Page 1: Public Health Overview
+Executive summary for senior decision-makers
+- KPI cards: Average mortality, inequality gap, relative risk, excess deaths
+- Mortality by deprivation quintile
+- Risk index trends
+- Overview table by locality
 
-To preserve the dataset structure and avoid removing population-level observations, missing values were handled using median imputation within Power Query in Microsoft Power BI.
+### Page 2: Risk vs Mortality Analysis
+Analytical view for public health intelligence teams
+- Scatter plot: Risk index vs mortality
+- Population-weighted visualization
+- Demonstrates risk-outcome relationship
+
+### Page 3: Prevention Priority Analysis
+Commissioning tool for intervention targeting
+- Prevention Priority Score ranking
+- Geographic identification of high-burden areas
+- Filterable by deprivation level
+
+---
+
+## Public Health Application
+
+This analysis demonstrates practical population health intelligence capabilities:
+
+**For Commissioners:**  
+- Identifies high-priority geographic areas for targeted prevention investment
+- Quantifies preventable deaths through inequality reduction
+- Supports proportionate universalism approach to resource allocation
+
+**For Public Health Teams:**  
+- Enables evidence-based intervention targeting (smoking cessation, NHS Health Checks, physical activity programs)
+- Provides inequality gap metrics for Joint Strategic Needs Assessments
+- Demonstrates data-driven approach to reducing cardiovascular health disparities
+
+**For ICS/Local Authorities:**  
+- Supports population health management with risk stratification approach
+- Aligns with NHS Long Term Plan cardiovascular disease prevention priorities
+- Provides intelligence framework for Core20PLUS5 health inequalities work
 
 ---
 
 ## Data Notes
 
-The Index of Multiple Deprivation (IMD) quintile variable in this dataset is coded such that **Quintile 5 represents the most deprived areas and Quintile 1 the least deprived**, which is the reverse of the standard England reporting convention.
+**IMD Quintile Coding:**  
+This dataset uses reverse coding: IMD 5 = Most Deprived, IMD 1 = Least Deprived  
+(Opposite of standard England reporting where IMD 1 = most deprived)
+
+**Data Source:** Simulated/synthetic dataset for analytical demonstration
 
 ---
 
-## Dashboard Pages
+## Repository Structure
+```
+CVD-Risk-Deprivation-Analysis/
+├── README.md                      # Project documentation and findings
+├── LICENSE                        # MIT License
+├── cvd_dashboard.pbix             # Power BI dashboard (3 pages)
+├── cvd_data_audit.sql             # SQL data quality checks and validation
+├── cvd_dataset_cleaned.csv        # Cleaned dataset (post-imputation)
+├── dashboard_overview.png         # Screenshot: Page 1 (Public Health Overview)
+├── risk_vs_mortality.png          # Screenshot: Page 2 (Risk Analysis)
+└── prevention_priority.png        # Screenshot: Page 3 (Prevention Priorities)
+```
 
-### Page 1 - Public Health Overview
-Executive summary including:
-
-- Average CVD Mortality
-- Inequality Gap
-- Relative Risk
-- Excess Deaths
-- CVD Mortality by IMD Quintile
-- Risk Index by IMD Quintile
-- Overview by Locality
-
----
-
-### Page 2 - Risk vs Mortality Analysis
-Scatter plot examining the relationship between behavioural risk factors and mortality rates.
-
----
-
-### Page 3 - Prevention Priority Analysis
-Identification of high-priority intervention areas using a prevention priority score.
+**Files:**
+- **Power BI Dashboard:** Interactive 3-page dashboard with KPIs, risk analysis, and prevention prioritization
+- **SQL Script:** Data audit queries including missing value checks, outlier detection, and gradient analysis
+- **Dataset:** Cleaned data with median imputation applied for missing values
+- **Screenshots:** Visual preview of all three dashboard pages
 
 ---
 
-## Key Insights
+## Related Portfolio Work
 
-Cardiovascular mortality increases steadily with deprivation, with the highest burden concentrated in the most deprived quintiles. Behavioural risk factors including smoking, hypertension and obesity also cluster within these communities, reinforcing the strong association between deprivation, risk exposure and adverse health outcomes.
+This is the second project in my public health analytics portfolio:
 
-Locality 71 recorded the highest Prevention Priority Score due to a combination of elevated behavioural risk prevalence and high cardiovascular mortality. This suggests targeted prevention programmes such as smoking cessation, physical activity promotion and dietary interventions should be prioritised in this locality to reduce avoidable deaths.
+**1. NHS DNA Analysis - Health Equity Case Study(https://github.com/ttbangg/NHS-Health-Equity-Analysis)**  
+Analyzed 1,200 GP appointments identifying 2.5x attendance disparity by deprivation
+
+**2. Cardiovascular Disease Risk & Deprivation Analysis** ← *You are here*  
+CVD mortality risk stratification demonstrating progression to predictive analytics
+
+---
+
+## About
+
+**Toheeb Quadri**  
+MSc Public Health (Distinction), Sheffield Hallam University  
+RSPH Student Member
+
+Actively seeking Public Health Analyst/Officer/Intelligence roles with visa sponsorship.
+
+**Connect:** LinkedIn(https://www.linkedin.com/in/toheeb-quadri-668228107/) | GitHub(https://github.com/ttbangg) | **Portfolio:** GitHub(https://github.com/ttbangg)
+
+## License
+
+MIT License
