@@ -37,6 +37,14 @@ Columns used in the analysis:
 
 ---
 
+## Data Cleaning
+
+During data preparation, four missing values were identified in behavioural risk variables (Smoking, Diabetes, Obesity and Hypertension).
+
+To preserve the dataset structure and avoid removing population-level observations, missing values were handled using median imputation within Power Query in Microsoft Power BI.
+
+---
+
 ## Data Notes
 
 The Index of Multiple Deprivation (IMD) quintile variable in this dataset is coded such that **Quintile 5 represents the most deprived areas and Quintile 1 the least deprived**, which is the reverse of the standard England reporting convention.
