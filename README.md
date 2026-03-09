@@ -27,7 +27,7 @@ The analysis demonstrates how public health data can be used to identify inequal
 
 - **Geographic outlier:** Locality 71 flagged-extreme mortality (210 per 100k) despite moderate deprivation, driven by high smoking/diabetes prevalence
 
-- **Prevention priorities identified:** Top 10 localities ranked by Prevention Priority Score combining mortality burden and modifiable risk exposure
+- **Prevention priorities identified:** Top localities ranked by Prevention Priority Score combining mortality burden and modifiable risk exposure
 
 - **Estimated preventable deaths:** 239 excess deaths if all areas achieved least deprived mortality rates
 
