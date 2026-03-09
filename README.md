@@ -47,10 +47,32 @@ The analysis demonstrates how public health data can be used to identify inequal
 - Prevention priority ranking
 - Inequality gap calculation
 
-**Data Quality:**
-- Missing data: 4 values per variable (5%) handled via median imputation
-- Outliers: Locality 71 retained with clinical flagging
-- IMD coding verified (reverse of England standard)
+---
+
+ ## Data Notes
+
+**IMD Quintile Coding:**  
+This dataset uses reverse coding: IMD 5 = Most Deprived, IMD 1 = Least Deprived  
+(Opposite of standard England reporting where IMD 1 = most deprived)
+
+**Data Source:** Simulated/synthetic dataset for analytical demonstration
+
+---
+
+### Data Quality Assessment
+
+**Sample size:** 75 localities
+
+**Missing data:** 
+- 4 missing values in each behavioural risk variable (Smoking Prevalence, Diabetes Prevalence, Obesity Prevalence, Hypertension Prevalence)
+- Missing rate: ~5% per variable
+- **Handling:** Median imputation applied in Power Query to preserve distribution while maintaining sample size
+
+**Outliers detected:** 
+- Locality 71: CVD mortality 210 per 100,000 (statistical outlier but biologically plausible; retained with flagging for clinical review)
+- All other observations within expected epidemiological ranges for England
+
+**Data validation:** SQL audit queries confirmed data integrity, IMD gradient alignment, and absence of systematic errors
 
 ---
 
@@ -150,16 +172,6 @@ This analysis demonstrates practical population health intelligence capabilities
 - Supports population health management with risk stratification approach
 - Aligns with NHS Long Term Plan cardiovascular disease prevention priorities
 - Provides intelligence framework for Core20PLUS5 health inequalities work
-
----
-
-## Data Notes
-
-**IMD Quintile Coding:**  
-This dataset uses reverse coding: IMD 5 = Most Deprived, IMD 1 = Least Deprived  
-(Opposite of standard England reporting where IMD 1 = most deprived)
-
-**Data Source:** Simulated/synthetic dataset for analytical demonstration
 
 ---
 
